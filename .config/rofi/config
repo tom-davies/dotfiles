@@ -1,1 +1,6 @@
-../../.dotfiles/rofi/.config/rofi/config
+! Rofi config file
+rofi.lines: 12
+rofi.font: Input Sans Narrow 11
+rofi.show-icons: true
+#rofi.theme: ~/.config/rofi/oxide.rasi
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
