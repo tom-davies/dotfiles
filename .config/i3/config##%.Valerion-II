@@ -12,7 +12,7 @@ font pango:Input Sans Narrow 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -136,7 +136,7 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+$alt+r mode "default"
 }
 
 bindsym $mod+$alt+r mode "resize"
@@ -153,17 +153,18 @@ gaps outer 5
 # Startup Applications #
 ########################
 #Wallpaper
-exec_always wal -i ~/Pictures/wallpaper.jpg
+exec_always wal -c -i ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id ~/.scripts/blurme -t 0 &
 #exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id oomoxify-cli ~/.cache/wal/colors-oomox
 exec_always --no-startup-id polybar example
+
 #############################
 # Window Properties Setting #
 #############################
 #Assign software to workspaces
 assign [class = "Nightly"] $ws2
-assign [class="Spotify"] $ws8
+assign [class = "Spotify"] $ws8
 
 #####################
 # Execution Hotkeys #
