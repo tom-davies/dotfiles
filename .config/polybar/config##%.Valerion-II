@@ -8,10 +8,10 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0:#222}
+background = ${xrdb:color6:#222}
 ;background = #0000
 background-alt = ${xrdb:color1}
-foreground = ${xrdb:color7:#222}
+foreground = ${xrdb:color0:#222}
 ;foreground = #dfdfdf
 foreground-alt = #555
 primary = ${xrdb:color2:#ffb52a}
@@ -52,9 +52,9 @@ modules-center = date
 modules-right = xbacklight temperature battery-combined-tlp cpu wlan eth
 
 tray-position = right
-tray-padding = 2
-tray-transparent = true
-;tray-background = #0063ff
+tray-padding = 0
+tray-transparent = false
+;tray-background = ${xrdb:color0}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
