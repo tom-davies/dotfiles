@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "vs-wal",
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
@@ -8,5 +7,6 @@
     "workbench.editor.tabSizing": "shrink",
     "markdown.extension.toc.unorderedList.marker": "+",
     "latex-workshop.view.pdf.viewer": "tab",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "workbench.colorTheme": "vs-wal"
 }
