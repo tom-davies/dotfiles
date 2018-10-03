@@ -49,7 +49,7 @@ font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 
 modules-left = i3 player-mpris-tail
 modules-center = date
-modules-right = xbacklight temperature battery-combined-tlp cpu wlan eth
+modules-right = cpu eth
 
 tray-position = right
 tray-padding = 2
@@ -241,7 +241,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = enp6s0
 interval = 3.0
 
 ;format-connected-underline = #55aa55
