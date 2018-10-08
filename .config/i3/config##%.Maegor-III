@@ -159,6 +159,9 @@ exec_always polybar example
 #exec_always --no-startup-id oomoxify-cli ~/.cache/wal/colors-oomox
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
 exec_always compton
+exec_always megasync
+exec_always mono /opt/duplicati-latest/Duplicati.GUI.TrayIcon.exe --no-hosted-server --hosturl=http://localhost:8200 &
+
 #############################
 # Window Properties Setting #
 #############################
