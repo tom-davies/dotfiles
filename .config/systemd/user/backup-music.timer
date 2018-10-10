@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup Music Library to B2 with Duply (timer)
+
+[Timer]
+OnCalendar=monthly
+Unit=backup-music.service
+
+[Install]
+WantedBy=default.target

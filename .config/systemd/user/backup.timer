@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup home to B2 with Duply (timer)
+
+[Timer]
+OnCalendar=daily
+Unit=backup.service
+
+[Install]
+WantedBy=default.target

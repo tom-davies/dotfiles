@@ -1,0 +1,6 @@
+[Service]
+Type=oneshot
+ExecStart=duply photos backup
+
+[Unit]
+Description=Backup Photo Library to B2 with Duply
