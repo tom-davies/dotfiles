@@ -141,7 +141,7 @@ mode "resize" {
 
 bindsym $mod+$alt+r mode "resize"
 
-bindsym $mod+shift+z exec dm-tool lock
+bindsym $mod+shift+z exec light-locker-command -l
 
 #Disregard Borders; Obtain Gaps
 for_window [class="^.*"] border pixel 0
@@ -153,8 +153,8 @@ gaps outer 5
 # Startup Applications #
 ########################
 #Wallpaper
-exec_always wal -cgi ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id ~/.scripts/blurme -t 0 &
+#exec_always --no-startup-id ~/.scripts/blurme -t 0 &
+exec_always wal -cgi ~/Pictures/Pokemon/Gen1/
 #Theming Spotify
 exec_always oomoxify-cli ~/.cache/wal/colors-oomox
 #Polybar
@@ -167,7 +167,8 @@ exec setxkbmap -variant colemak
 exec_always compton
 #Eliminate Blue light
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
-
+#Screen Locking
+exec_always light-locker
 #############################
 # Window Properties Setting #
 #############################
