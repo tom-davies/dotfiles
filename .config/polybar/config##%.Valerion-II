@@ -18,7 +18,7 @@ secondary = ${xrdb:color3:#e60053}
 alert = ${xrdb:color4:#bd2c40}
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:LVDS1}
 width = 100%
 height = 23
 ;offset-x = 0
@@ -46,9 +46,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Material Icons:fontformat=truetype:size=12:antialias=true;1"
 font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 
-modules-left = i3 player-mpris-tail
-modules-center = date
-modules-right = xbacklight temperature battery-combined-tlp cpu wlan eth
+modules-left = date alsa xbacklight player-mpris-tail
+modules-center = i3
+modules-right = temperature battery-combined-tlp cpu vpn wlan eth
 
 tray-position = right
 tray-padding = 0
@@ -68,6 +68,12 @@ tray-transparent = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/vpn-up/vpn-up.sh
+interval = 60
+label = %output%
 
 [module/player-mpris-tail]
 type = custom/script
@@ -161,6 +167,8 @@ ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 8;
 ws-icon-default = 
+
+
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -229,12 +237,12 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+label-volume = 
+label-volume-foreground = ${colors.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
