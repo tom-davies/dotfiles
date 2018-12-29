@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=colors-konsole
-Font=Fira Code,11,-1,5,50,0,0,0,0,0,Regular
+Font=Fira Code,9,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=true
 
 [General]

@@ -153,21 +153,30 @@ gaps outer 5
 # Startup Applications #
 ########################
 #Wallpaper
-exec_always wal -cgi ~/Pictures/1920x1080/
+exec_always wal -gi ~/Pictures/Pokewalls/Gen1/
+exec_always --no-startup-id oomoxify-cli ~/.cache/wal/colors-oomox
 exec_always polybar example
-#exec_always --no-startup-id ~/.scripts/blurme -t 0 &
-#exec_always --no-startup-id oomoxify-cli ~/.cache/wal/colors-oomox
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
 exec_always compton
 exec_always megasync
-exec_always mono /opt/duplicati-latest/Duplicati.GUI.TrayIcon.exe --no-hosted-server --hosturl=http://localhost:8200 &
+exec_always pasystray
 
 #############################
 # Window Properties Setting #
 #############################
 #Assign software to workspaces
-assign [class = "Nightly"] $ws2
-assign [class="Spotify"] $ws8
+
+#################
+# Media Hotkeys #
+#################
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_0a_00.3.analog-stereo +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_0a_00.3.analog-stereo -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_0a_00.3.analog-stereo toggle # mute sound
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 #####################
 # Execution Hotkeys #

@@ -19,7 +19,7 @@ secondary = ${xrdb:color3}
 alert = #bd2c40
 
 [bar/example]
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 23
 ;offset-x = 0
@@ -44,12 +44,12 @@ module-margin-right = 2
 
 font-0 = "Input Sans Narrow:pixelsize=10;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "MaterialIcons:size=12:antialias=true;2"
+font-2 = "Material Icons:size=12:antialias=true;2"
 font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 
-modules-left = i3
-modules-center = date
-modules-right = alsa cpu eth
+modules-left = date player-mpris-tail
+modules-center = i3
+modules-right = pulseaudio cpu vpn-up eth
 
 tray-position = right
 tray-padding = 2
@@ -57,6 +57,10 @@ tray-transparent = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/vpn-up]
+type=custom/script
+exec = ~/.config/polybar/vpn-up/vpn-up.sh
 
 [module/player-mpris-tail]
 type = custom/script
@@ -125,32 +129,37 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-#label-mode-foreground = #000
+label-mode-foreground = #000
 label-mode-background = ${colors.secondary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
 label-focused-foreground = ${colors.background}
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 #label-unfocused-foreground = ${xrbd:color5}
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-foreground = ${colors.background}
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 8;
+ws-icon-default = 
 
 [module/cpu]
 type = internal/cpu
@@ -174,31 +183,23 @@ type = internal/network
 interface = enp6s0
 interval = 3.0
 format-connected-foreground = ${colors.primary}
-;format-connected-underline = #55aa55
 format-connected-prefix = ""
-;format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
-
+left-click = %downspeed% %upspeed%
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+
 
 [module/date]
 type = internal/date
 interval = 5
-date =
-date-alt = " %Y-%m-%d"
+date = %Y-%m-%d
+date-alt = %Y-%m-%d
 time = %H:%M
 time-alt = %H:%M:%S
-;format-prefix =
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
 label = %date% %time%
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 label-volume =  
 label-volume-foreground = ${colors.primary}

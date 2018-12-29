@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontFamily": "'Fira Code Retina','Material Design Icons'",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.acceptSuggestionOnEnter": "smart",
