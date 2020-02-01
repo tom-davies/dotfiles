@@ -165,7 +165,7 @@ exec --no-startup-id megasync
 #Functional Keyboard
 exec setxkbmap -variant colemak
 #Compositing, ACTIVATE
-exec_always compton
+exec_always picom
 #Eliminate Blue light
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
 #Screen Locking

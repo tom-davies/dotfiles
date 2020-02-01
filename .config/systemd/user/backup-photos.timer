@@ -1,9 +1,0 @@
-[Unit]
-Description=Backup Photo Library to B2 with Duply (timer)
-
-[Timer]
-OnCalendar=monthly
-Unit=backup-photos.service
-
-[Install]
-WantedBy=default.target

@@ -1,6 +1,0 @@
-[Service]
-Type=oneshot
-ExecStart=duply music backup
-
-[Unit]
-Description=Backup Music Library to B2 with Duply

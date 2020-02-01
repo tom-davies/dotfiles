@@ -1,6 +1,0 @@
-[Service]
-Type=oneshot
-ExecStart=duply home backup
-
-[Unit]
-Description=Backup Home Folder to B2 with Duply
