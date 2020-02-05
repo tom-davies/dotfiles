@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+ln ~/.cache/wal/colors-konsole.colorscheme ~/.local/share/konsole 
