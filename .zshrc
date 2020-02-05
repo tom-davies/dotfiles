@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 path+=/home/tom/miniconda3/bin/
+
+(cat $HOME/.config/wpg/sequences &)
