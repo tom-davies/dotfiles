@@ -1,3 +1,4 @@
 #!/bin/zsh
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ln ~/.cache/wal/colors-konsole.colorscheme ~/.local/share/konsole 
