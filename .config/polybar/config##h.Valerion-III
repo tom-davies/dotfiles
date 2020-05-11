@@ -18,7 +18,7 @@ secondary = ${xrdb:color3:#e60053}
 alert = ${xrdb:color4:#bd2c40}
 
 [bar/example]
-monitor = ${env:MONITOR:LVDS1}
+;monitor = ${env:MONITOR:DP1}
 width = 100%
 height = 23
 ;offset-x = 0
@@ -48,32 +48,13 @@ font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 
 modules-left = date alsa xbacklight player-mpris-tail
 modules-center = i3
-modules-right = temperature battery-combined-tlp cpu vpn wlan eth
+modules-right = temperature battery-combined-tlp cpu memory vpn wlan eth
 
 tray-position = right
 tray-padding = 0
-tray-transparent = false
-;tray-background = ${xrdb:color0}
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/vpn]
-type = custom/script
-exec = ~/.config/polybar/vpn-up/vpn-up.sh
-interval = 60
-label = %output%
 
 [module/player-mpris-tail]
 type = custom/script
@@ -194,32 +175,37 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-;format-underline = #f90000
+format-prefix = ""
 label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = ""
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
-
+interval = 2
 format-connected =  <label-connected>
-;format-connected-underline = #9f78e1
 label-connected = %local_ip%
-
 format-disconnected =
 
 [module/eth]
 type = internal/network
-interface = enp0s3
-interval = 3.0
-
-;format-connected-underline = #55aa55
-format-connected-prefix = ""
-;format-connected-prefix-foreground = ${colors.foreground-alt}
+interface = enp0s25
+interval = 2
+format-connected =  <label-connected>
 label-connected = %local_ip%
-
 format-disconnected =
+
+[module/vpn]
+type = internal/network
+interface = nordlynx
+interval = 2
+label-connected = ""
+label-disconnected = ""
 
 [module/date]
 type = internal/date
@@ -230,10 +216,6 @@ date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
-
-;format-prefix =
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -270,13 +252,13 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = temp:<label>
-;format-underline = #f50a4d
-format-warn = TEMP:<label-warn>
+format =  <label>
+format-underline = ${colors.background}
+format-warn =  <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -286,13 +268,7 @@ ramp-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-; vim:ft=dosini
