@@ -152,37 +152,51 @@ gaps outer 5
 ########################
 # Startup Applications #
 ########################
+
 #Wallpaper
 #exec_always --no-startup-id ~/.scripts/blurme -t 0 &
 #exec_always wal -cgi ~/Pictures/Pokemon/Gen1/
 exec_always wpg -s ~/MEGA/Pokewalls/
+
 #Theming Spotify
 exec_always oomoxify-cli ~/.cache/wal/colors-oomox
+
 #Polybar
 exec_always --no-startup-id polybar example
-#Megasync
-exec --no-startup-id megasync
+
+#Nextcloud
+exec --no-startup-id nextcloud
+
 #Functional Keyboard
-exec setxkbmap -variant colemak
-#Compositing, ACTIVATE
+exec setxkbmap -layout gb -variant colemak
+
+#Compositing
 exec_always picom
+
 #Eliminate Blue light
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
+
 #Screen Locking
 exec_always light-locker
+
+
 #############################
 # Window Properties Setting #
 #############################
+
 #Assign software to workspaces
 assign [class = "Nightly"] $ws2
 assign [class = "Spotify"] $ws8
 
+
 #####################
 # Execution Hotkeys #
 #####################
+
 #Screen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10 && pkill dunst && notify-send -u low 'Brightness Inc' $(cat /sys/class/backlight/intel_backlight/brightness)"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10 && pkill dunst && notify-send -u low 'Brightness Dec' $(cat /sys/class/backlight/intel_backlight/brightness)" 
+
 #Volume controls
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
