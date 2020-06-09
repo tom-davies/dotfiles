@@ -60,10 +60,24 @@ ZSH_THEME="blinks"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  node
-  npm
   sudo
+<<<<<<< HEAD:.zshrc##h.Valerion-III
   archlinux
+  extract
+  cp
+  mosh
+  python
+  pip
+=======
+  ubuntu
+  ssh-agent
+  thefuck
+  python
+  extract
+  cp
+>>>>>>> e4c3e87182bfba02bed423d99089e7b4c35cedb9:.zshrc##h.Maegor-VI
+  colored-man-pages
+  colorize
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -86,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="~/.ssh/Maegor-V"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -97,9 +111,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval $(thefuck --alias)
+eval $(thefuck --alias) > /dev/null
 
-path+=/home/tom/miniconda3/bin/
-
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/github
+<<<<<<< HEAD:.zshrc##h.Valerion-III
+(cat $HOME/.config/wpg/sequences &)
+=======
+eval $(ssh-agent -s) > /dev/null
+ssh-add ~/.ssh/Maegor-VI > /dev/null 2>&1
+>>>>>>> e4c3e87182bfba02bed423d99089e7b4c35cedb9:.zshrc##h.Maegor-VI

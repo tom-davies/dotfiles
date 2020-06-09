@@ -1,4 +1,20 @@
 #!/bin/zsh
 
+distro=$(lsb_release -si)
+
+if [ "$distro" = "Ubuntu" ]; then
+
+  echo "Installing zsh, mosh, "
+  sudo apt install zsh mosh
+
+fi
+
+if [ "$distro" = "Arch" ]; then
+
+  echo "Installing zsh, mosh, "
+  sudo pacman -S zsh mosh
+
+fi
+
+echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-ln ~/.cache/wal/colors-konsole.colorscheme ~/.local/share/konsole 
