@@ -156,7 +156,7 @@ gaps outer 5
 #Wallpaper
 #exec_always --no-startup-id ~/.scripts/blurme -t 0 &
 #exec_always wal -cgi ~/Pictures/Pokemon/Gen1/
-exec_always wpg -s ~/MEGA/Pokewalls/
+exec_always wpg -s ~/Nextcloud/Photos/Pokewalls/
 
 #Theming Spotify
 exec_always oomoxify-cli ~/.cache/wal/colors-oomox
