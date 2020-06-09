@@ -1,1 +1,0 @@
-.zshrc##h.Maegor-VI
