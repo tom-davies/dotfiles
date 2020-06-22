@@ -168,7 +168,7 @@ exec_always --no-startup-id polybar example
 exec --no-startup-id nextcloud
 
 #Functional Keyboard
-exec setxkbmap -layout gb -variant colemak
+exec setxkbmap -layout gb -variant colemak -option compose:ralt
 
 #Compositing
 exec_always picom
