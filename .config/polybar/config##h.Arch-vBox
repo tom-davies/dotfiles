@@ -8,18 +8,15 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #0000
+background = ${xrdb:color6:#222}
 background-alt = ${xrdb:color1}
-foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-foreground-alt = #555
-primary = ${xrdb:color2:#ffb52a}
+foreground = ${xrdb:color0:#222}
+foreground-alt = ${xrdb:color7:#555}
+primary = ${xrdb:color2:#aab52a}
 secondary = ${xrdb:color3:#e60053}
-alert = ${xrdb:color4:bd2c40}
+alert = ${xrdb:color4:#bd2c40}
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 23
 ;offset-x = 0
@@ -42,41 +39,21 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Input Sans Narrow:pixelsize=10;1"
+font-0 = "Fira Code Retina:fontformat=truetype:size=10:antialias=true;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Material Icons:fontformat=truetype:size=12:antialias=true;1"
 font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 
-modules-left = i3 
-modules-center = date
-modules-right = player-mpris-tail cpu eth
+modules-left = date
+modules-center = i3
+modules-right = cpu memory eth
 
 tray-position = right
-tray-padding = 2
-tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/player-mpris-tail]
-type = custom/script
-exec = ~/.config/polybar/player-mpris-tail/player-mpris-tail.py
-tail = true
-click-left = ~/.config/polybar/player-mpris-tail/player-ctrl.sh play-pause
-click-right = ~/.config/polybar/player-mpris-tail/player-ctrl.sh next
-click-middle = ~/.config/polybar/player-mpris-tail/player-ctrl.sh previous
 
 [module/xwindow]
 type = internal/xwindow
@@ -103,6 +80,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -131,57 +109,51 @@ label-mode-foreground = #0000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
+label-focused-foreground = ${module/bspwm.label-focused-foreground}
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 8;
+ws-icon-default = 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #f90000
+format-prefix = ""
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "mem: "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #4bffdc
-label = %gb_used%
+format-prefix = ""
+label = %percentage_used%%|%percentage_swap_used%%
 
 [module/eth]
 type = internal/network
 interface = enp0s3
-interval = 3.0
-
-;format-connected-underline = #55aa55
-format-connected-prefix = ""
-;format-connected-prefix-foreground = ${colors.foreground-alt}
+interval = 2
+format-connected =  <label-connected>
 label-connected = %local_ip%
-
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+
 
 [module/date]
 type = internal/date
@@ -192,10 +164,6 @@ date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
-
-;format-prefix =
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -229,13 +197,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-;vim:ft=dosini
