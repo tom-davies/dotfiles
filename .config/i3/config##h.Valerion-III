@@ -171,7 +171,7 @@ exec --no-startup-id nextcloud
 exec setxkbmap -layout gb -variant colemak -option compose:ralt
 
 #Compositing
-exec_always picom
+exec_always picom --config ~/.config/picom/picom.conf -b --experimental-backends
 
 #Eliminate Blue light
 exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
