@@ -14,8 +14,8 @@ foreground = ${xrdb:color0:#222}
 ;foreground = #dfdfdf
 foreground-alt = ${xrdb:color0:#555}
 primary = ${xrdb:color2:#aab52a}
-secondary = ${xrdb:color3:#e60053}
-alert = ${xrdb:color4:#bd2c40}
+secondary = ${xrdb:color4:#e60053}
+alert = ${xrdb:color3:#bd2c40}
 
 [bar/example]
 ;monitor = ${env:MONITOR:DP1}
@@ -231,13 +231,9 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.alert}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -245,7 +241,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.secondary}
 
 [module/temperature]
 type = internal/temperature
@@ -254,17 +250,12 @@ warn-temperature = 60
 
 format =  <label>
 format-underline = ${colors.background}
-format-warn =  <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn = <label-warn>
+format-warn-underline = ${colors.alert}
 
 label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.alert}
 
 [settings]
 screenchange-reload = true
