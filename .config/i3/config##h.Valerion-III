@@ -18,7 +18,7 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+r exec rofi -show run
+bindsym $mod+r exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # change focus
 bindsym $mod+j focus left
