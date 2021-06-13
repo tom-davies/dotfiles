@@ -22,10 +22,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+r exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+n focus left
+bindsym $mod+e focus down
+bindsym $mod+i focus up
+bindsym $mod+o focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -34,10 +34,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+o move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -144,6 +144,8 @@ bindsym $mod+$alt+r mode "resize"
 
 bindsym $mod+shift+z exec light-locker-command -l
 
+bindsym $mod+shift+s exec flameshot gui
+
 #Disregard Borders; Obtain Gaps
 for_window [class="^.*"] border pixel 0
 smart_gaps on
@@ -160,10 +162,10 @@ gaps outer 5
 exec_always wpg -s ~/Nextcloud/Photos/Pokewalls/
 
 #Theming Spotify
-exec_always oomoxify-cli ~/.cache/wal/colors-oomox
+#exec_always oomoxify-cli ~/.cache/wal/colors-oomox
 
 #Polybar
-exec_always --no-startup-id polybar example
+exec --no-startup-id polybar example
 
 #Nextcloud
 exec --no-startup-id nextcloud
@@ -172,10 +174,10 @@ exec --no-startup-id nextcloud
 exec setxkbmap -layout gb -variant colemak -option compose:ralt
 
 #Compositing
-exec_always picom --config ~/.config/picom/picom.conf -b --experimental-backends
+exec picom --config ~/.config/picom/picom.conf -b --experimental-backends
 
 #Eliminate Blue light
-exec_always --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
+exec --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
 
 #Screen Locking
 exec_always light-locker
