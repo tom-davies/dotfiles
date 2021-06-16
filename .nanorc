@@ -2,8 +2,6 @@ set autoindent
 set boldtext
 set constantshow
 set historylog
-set morespace
-set smooth
 set regexp
 set fill 72
 set multibuffer
