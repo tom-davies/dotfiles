@@ -19,7 +19,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+r exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+r exec "rofi -show combi"
 
 # change focus
 bindsym $mod+n focus left
