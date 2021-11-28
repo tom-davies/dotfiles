@@ -1,5 +1,6 @@
 configuration {
-	modi: "run,ssh";
+	modi: "drun,ssh,window,combi";
+	combi-modi: "window,drun,ssh";
 	width: 50;
 	lines: 15;
 	columns: 1;
@@ -10,8 +11,8 @@ configuration {
 	yoffset: 0;
 	xoffset: 0;
 	fixed-num-lines: true;
-	terminal: "rofi-sensible-terminal";
-	ssh-client: "ssh";
+	terminal: "alacritty";
+	ssh-client: "mosh";
 	ssh-command: "{terminal} -e {ssh-client} {host}";
 	run-command: "{cmd}";
 	parse-hosts: true;
@@ -27,3 +28,4 @@ configuration {
 	kb-row-up: "Up,Control+p,Shift+Tab,Shift+ISO_Left_Tab,Alt+k";
 	kb-row-down: "Down,Control+n,Alt+j";
 }
+@theme "wpg"
