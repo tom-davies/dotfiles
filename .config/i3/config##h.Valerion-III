@@ -159,13 +159,10 @@ gaps outer 5
 #Wallpaper
 #exec_always --no-startup-id ~/.scripts/blurme -t 0 &
 #exec_always wal -cgi ~/Pictures/Pokemon/Gen1/
-exec_always wpg -s ~/Nextcloud/Photos/Pokewalls/
+exec --no-startup-id wpg -s ~/Nextcloud/Photos/Pokewalls/
 
 #Theming Spotify
 #exec_always oomoxify-cli ~/.cache/wal/colors-oomox
-
-#Polybar
-exec --no-startup-id polybar example
 
 #Nextcloud
 exec --no-startup-id nextcloud
@@ -179,6 +176,9 @@ exec picom --config ~/.config/picom/picom.conf -b --experimental-backends
 #Eliminate Blue light
 exec --no-startup-id "redshift-gtk -l 53.482935:-2.176933 -t 6500:2700"
 
+#Polybar
+exec --no-startup-id polybar example
+
 #Screen Locking
 exec_always light-locker
 
@@ -186,6 +186,12 @@ exec_always light-locker
 #############################
 # Window Properties Setting #
 #############################
+
+#Force zoom to float
+for_window [class="zoom"] floating enable
+for_window [class="zoom" title="Zoom - Licensed Account"] floating disable
+for_window [class="zoom" title="Zoom Meeting"] floating disable
+
 
 #Assign software to workspaces
 assign [class = "Nightly"] $ws2
