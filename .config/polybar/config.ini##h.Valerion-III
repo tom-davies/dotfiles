@@ -8,14 +8,14 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color6:#222}
+background = ${xrdb:color6:<COLOR6>}
 background-alt = ${xrdb:color1}
-foreground = ${xrdb:color0:#222}
+foreground = ${xrdb:color0:<COLOR0>}
 ;foreground = #dfdfdf
-foreground-alt = ${xrdb:color0:#555}
-primary = ${xrdb:color2:#aab52a}
-secondary = ${xrdb:color4:#e60053}
-alert = ${xrdb:color3:#bd2c40}
+foreground-alt = ${xrdb:color0:<COLOR0>}
+primary = ${xrdb:color2:(<COLOR2>}
+secondary = ${xrdb:color4:<COLOR4>}
+alert = ${xrdb:color3:<COLOR3>}
 
 [bar/example]
 ;monitor = ${env:MONITOR:DP1}
@@ -48,7 +48,7 @@ font-3 = "FontAwesome:fontformat=truetype:size=10:antialias=true;1"
 font-4 = "Font Awesome 5 Free Solid:fontformat=truetype:size=10:antialias=true;1"
 modules-left = date alsa xbacklight player-mpris-tail
 modules-center = i3
-modules-right = temperature battery-combined-tlp cpu memory vpn wlan eth
+modules-right = temperature battery cpu memory vpn wlan eth
 
 tray-position = right
 tray-padding = 0
@@ -63,11 +63,6 @@ tail = true
 click-left = ~/.config/polybar/player-mpris-tail/player-ctrl.sh play-pause
 click-right = ~/.config/polybar/player-mpris-tail/player-ctrl.sh next
 click-middle = ~/.config/polybar/player-mpris-tail/player-ctrl.sh previous
-
-[module/battery-combined-tlp]
-type=custom/script
-exec = ~/.config/polybar/battery-combined-tlp/battery-combined-tlp.sh
-interval = 10
 
 [module/xwindow]
 type = internal/xwindow
@@ -153,7 +148,7 @@ ws-icon-default = 
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
+format = <label><bar>
 label = 
 
 bar-width = 10
@@ -209,6 +204,20 @@ label = %output%
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+format-charging =<label-charging>
+format-discharging =<ramp-capacity><label-discharging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
 [module/date]
 type = internal/date
 interval = 5
@@ -228,9 +237,9 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${colors.foreground}
 
-format-muted-prefix = " "
+format-muted = <label-muted> <bar-volume>
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.primary}
@@ -248,7 +257,7 @@ bar-volume-empty-foreground = ${colors.secondary}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 65
 
 format =  <label>
 format-underline = ${colors.background}
@@ -256,7 +265,7 @@ format-warn = <label-warn>
 format-warn-underline = ${colors.alert}
 
 label = %temperature-c%
-label-warn =  %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}
 
 [settings]
