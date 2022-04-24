@@ -8,13 +8,13 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color6:<COLOR6>}
-background-alt = ${xrdb:color1}
-foreground = ${xrdb:color0:<COLOR0>}
-foreground-alt = ${xrdb:color0:<COLOR0>}
-primary = ${xrdb:color2:(<COLOR2>}
-secondary = ${xrdb:color4:<COLOR4>}
-alert = ${xrdb:color3:<COLOR3>}
+background = #EEDDA5
+background-alt = #B79466
+foreground = #1f1813
+foreground-alt = #1f1813
+primary = #CBA36F
+secondary = #DEC38C
+alert = #D9BA84
 
 [bar/example]
 ;monitor = ${env:MONITOR:DP1}
