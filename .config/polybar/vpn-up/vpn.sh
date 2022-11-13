@@ -1,5 +1,5 @@
 #!/bin/sh
-vpn_connected=$(mullvad status | grep 'Connected to' | awk '{print $3}')
+vpn_connected=$(mullvad status | grep 'Connected to' | awk '{print $1}')
 
 if [  "$vpn_connected" == "Connected" ]; then
 		echo "" 
