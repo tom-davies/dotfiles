@@ -19,7 +19,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+r exec "rofi -show combi"
+bindsym $mod+r exec "rofi -show drun"
 
 # change focus
 bindsym $mod+n focus left
@@ -194,7 +194,7 @@ for_window [class="zoom" title="Zoom Meeting"] floating disable
 
 
 #Assign software to workspaces
-assign [class = "Nightly"] $ws2
+assign [class = "firefox-nightly"] $ws2
 assign [class = "Spotify"] $ws8
 
 
