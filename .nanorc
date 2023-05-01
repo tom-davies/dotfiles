@@ -5,7 +5,7 @@ set historylog
 set regexp
 set fill 72
 set multibuffer
-set suspend
+
 
 syntax "pkgbuild" "^.*PKGBUILD$"
 color green start="^" end="$"
