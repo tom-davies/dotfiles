@@ -1,6 +1,5 @@
 configuration {
-	modi: "drun,ssh,window,combi";
-	combi-modi: "window,drun,ssh";
+	modi: "drun";
 	width: 50;
 	lines: 15;
 	columns: 1;
