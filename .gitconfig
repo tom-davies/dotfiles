@@ -1,0 +1,8 @@
+[user]
+	email = tomdavies2820@gmail.com
+	name = Tom Davies
+	signingkey = 8D1B511A1C51A32F
+[core]
+	pager = bat
+[commit]
+	gpgsign = true
