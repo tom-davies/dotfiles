@@ -13,7 +13,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec konsole
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,8 +149,8 @@ bindsym $mod+shift+s exec flameshot gui
 #Disregard Borders; Obtain Gaps
 for_window [class="^.*"] border pixel 0
 smart_gaps on
-gaps inner 10
-gaps outer 5
+gaps inner 4
+gaps outer 2
 
 ########################
 # Startup Applications #
