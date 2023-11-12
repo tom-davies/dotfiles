@@ -119,5 +119,6 @@
     },
     "window.zoomLevel": -1,
     "terminal.integrated.fontFamily": "monospace",
-    "editor.guides.bracketPairs": true
+    "editor.guides.bracketPairs": true,
+    "window.titleBarStyle": "custom"
 }
