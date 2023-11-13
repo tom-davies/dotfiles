@@ -110,3 +110,8 @@ alias code="vscodium"
 eval $(thefuck --alias) > /dev/null
 
 (cat $HOME/.config/wpg/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
+
+# make ssh sessions render properly in kitty by aliasing ssh and passing the terminfo to the remote
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
