@@ -134,4 +134,4 @@ ssh-add ~/.ssh/ed-Baelor-I
 wal --theme dracula
 
 # fastfetch
-fastfetch -c .config/fastfetch/small.jsonc
+fastfetch -c ~/.config/fastfetch/small.jsonc
