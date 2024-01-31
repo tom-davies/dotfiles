@@ -4,5 +4,6 @@
 	signingkey = 8D1B511A1C51A32F
 [core]
 	pager = bat
+	editor = nano
 [commit]
 	gpgsign = true
