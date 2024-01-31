@@ -125,3 +125,5 @@ eval $(thefuck --alias) > /dev/null
 export PATH=$PATH:/home/tom/.local/bin
 
 export DOCKER_DIR=/home/tom/docker
+
+fastfetch -c .config/fastfetch/small.jsonc
