@@ -94,6 +94,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/Maegor-V"
 
+# theming
+wal -qi ~/ubuntu-23.10-mantic.png
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -103,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval $(thefuck --alias) > /dev/null
+eval $(thefuck --alias --enable-experimental-instant-mode)
 
 #eval $(ssh-agent -s) > /dev/null
 #ssh-add ~/.ssh/Maegor-VI > /dev/null 2>&1
