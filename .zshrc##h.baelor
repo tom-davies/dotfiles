@@ -126,4 +126,8 @@ export PATH=$PATH:/home/tom/.local/bin
 
 export DOCKER_DIR=/home/tom/docker
 
+#theming
+wal --theme dracula
+
+# fastfetch
 fastfetch -c .config/fastfetch/small.jsonc
