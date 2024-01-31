@@ -126,6 +126,10 @@ export PATH=$PATH:/home/tom/.local/bin
 
 export DOCKER_DIR=/home/tom/docker
 
+# add ssh keys
+eval `ssh-agent -s`
+ssh-add ~/.ssh/ed-Baelor-I
+
 #theming
 wal --theme dracula
 
