@@ -1,0 +1,15 @@
+icon-theme=Papirus-Dark
+width=50
+font=Fira Code:size=9
+line-height=12
+fields=name,generic,comment,categories,filename,keywords
+terminal=kitty
+layer=overlay
+[colors]
+background={color0.strip}aa
+text={color4.strip}ff
+match={color2.strip}ff
+selection={color0.strip}dd
+selection-text={color1.strip}ff
+selection-match={color5.strip}ff
+border={color6.strip}ff
