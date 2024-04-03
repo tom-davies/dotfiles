@@ -131,7 +131,7 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/ed-Baelor-I
 
 #theming
-wal -q --theme dracula
+#wal -q --theme dracula
 
 # fastfetch
 clear && fastfetch -c ~/.config/fastfetch/small.jsonc
